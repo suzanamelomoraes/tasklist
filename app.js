@@ -19,7 +19,7 @@ function addTask(e) {
   }
 
   const li = document.createElement("li");
-  li.className = "colletion-item";
+  li.className = "collection-item";
   li.appendChild(document.createTextNode(taskInput.value));
 
   const link = document.createElement("a");
@@ -46,4 +46,17 @@ function clearTasks() {
   while (taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
   }
+}
+
+function filterTasks(e) {
+  const text = e.target.value.toLowerCase();
+
+  document.querySelectorAll(".collection-item").forEach(function(task) {
+    const item = task.firstChild.textContent;
+    if (item.toLowerCase().indexOf(text) != -1) {
+      task.style.display = "block";
+    } else {
+      task.style.display = "none";
+    }
+  });
 }

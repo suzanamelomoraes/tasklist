@@ -29,6 +29,8 @@ function addTask(e) {
 
   taskList.appendChild(li);
 
+  storeTaskInLocalStorage(taskInput.value);
+
   taskInput.value = "";
 
   e.preventDefault();

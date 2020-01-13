@@ -31,3 +31,11 @@ function addTask(e) {
 
   e.preventDefault();
 }
+
+function removeTask(e) {
+  if (e.target.parentElement.classList.contains("delete-item")) {
+    if (confirm("Would you like to delete this task?")) {
+      e.target.parentElement.parentElement.remove();
+    }
+  }
+}

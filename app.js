@@ -6,11 +6,11 @@ const taskInput = document.querySelector("#task");
 
 loadEventListeners();
 
-loadEventListeners = () => {
+function loadEventListeners() {
   form.addEventListener("submit", addTask);
-};
+}
 
-addTask = e => {
+function addTask(e) {
   if (taskInput.value === "") {
     alert("Please, add a task");
   }
@@ -24,5 +24,9 @@ addTask = e => {
   link.innerHTML = "<i class='fa fa-remove'></i>";
   li.appendChild(link);
 
+  taskList.appendChild(li);
+
+  taskInput.value = "";
+
   e.preventDefault();
-};
+}

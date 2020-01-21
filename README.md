@@ -1,6 +1,4 @@
-# tasklist
-
-TaskList
+# Task List
 
 Application that allows the user to create a list of tasks.
 
